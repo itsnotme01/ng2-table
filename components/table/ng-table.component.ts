@@ -10,9 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         <tr role="row">
           <th *ngFor="let column of columns" [ngTableSorting]="config" [column]="column" 
               (sortChanged)="onChangeTable($event)" ngClass="{{column.className || ''}}">
-            {{column.title}}
-            <i *ngIf="config && column.sort" class="pull-right fa"
-              [ngClass]="{'fa-chevron-down': column.sort === 'desc', 'fa-chevron-up': column.sort === 'asc'}"></i>
+            {{column.title}}           
+              <i *ngIf="config && column.sort && column.sort === 'asc'" class="pull-right fa material-icons md-24">expand_less</i>
+              <i *ngIf="config && column.sort && column.sort === 'desc'" class="pull-right fa material-icons md-24">expand_more</i>
           </th>
         </tr>
       </thead>
@@ -22,7 +22,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
           <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}"
                  [ngTableFiltering]="column.filtering"
                  class="form-control"
-                 style="width: auto;"
+                 style="width: 100%;"
                  (tableChanged)="onChangeTable(config)"/>
         </td>
       </tr>
