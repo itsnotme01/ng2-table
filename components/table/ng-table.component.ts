@@ -26,7 +26,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
                  (tableChanged)="onChangeTable(config)"/>
         </td>
       </tr>
-        <tr *ngFor="let row of rows" style:"cursor: pointer;">
+        <tr *ngFor="let row of rows" style="cursor: pointer;">
           <td (click)="cellClick(row, column.name)" *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
         </tr>
       </tbody>
