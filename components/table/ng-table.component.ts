@@ -31,7 +31,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         </tr>
       </tbody>
     </table>
-  `
+  `,
+  styleUrls: ['../../../../src/app/app.component.css']
 })
 export class NgTableComponent {
   // Table values
