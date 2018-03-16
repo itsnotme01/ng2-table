@@ -32,7 +32,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
       </tbody>
     </table>
   `,
-  styleUrls: ['../../../../src/app/app.component.css']
+  styles: ['.statusColumnWidth { width:180px; }', 
+          '.groupidColumnWidth { width:100px; }', 
+          '.dateColumnWidth { width:240px; }', 
+          '.productColumnWidth { width: 280px; }']
 })
 export class NgTableComponent {
   // Table values
